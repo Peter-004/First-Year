@@ -1,11 +1,10 @@
-import java.util.*;
-
 public class Vector {
 
     private int x;
     private int y;
     private int z;
 
+    //If it is a two-dimensional vector, k = 0.
     public Vector(int i, int j, int k){
         x = i;
         y = j;
@@ -32,25 +31,25 @@ public class Vector {
         int j = v.getY();
         int k = v.getZ();
         int powSum = (i * i) + (j * j) + (k * k);
-        double modulus = Math.sqrt(powSum);
-        return modulus;
+        return Math.sqrt(powSum);
     }
 
     public static Vector crossProduct(Vector a, Vector b){
-        int arnold;
-        int chris;
-        int rock;
-
-        arnold = (a.getY() * b.getZ()) - (a.getZ() * b.getY());
-        chris = -1 * ((a.getX() * b.getZ()) - (a.getZ() * b.getX()));
-        rock = (a.getX() * b.getY()) - (a.getY() * b.getX());
+        int arnold = (a.getY() * b.getZ()) - (a.getZ() * b.getY());
+        int chris = -1 * ((a.getX() * b.getZ()) - (a.getZ() * b.getX()));
+        int rock = (a.getX() * b.getY()) - (a.getY() * b.getX());
         Vector product = new Vector(arnold, chris, rock);
         return product;
     }
 
+    public static int dotProduct(Vector a, Vector b){
+        return ((a.getX() * b.getX()) + (a.getY() * b.getY()) + (a.getZ() * b.getZ()));
+    }
+    public static double angle(Vector a, Vector b){
+        double theta = MyMaths.arcCos(((dotProduct(a,b)) / (mod(a) * mod(b))));
+        return  theta;
+    }
     public static void main(String[] args){
-        Vector hyp = new Vector(2, 3,4);
-        Vector peep = new Vector(5,6,7);
-        System.out.println(crossProduct(hyp, peep));
+        //test the methods
     }
 }
