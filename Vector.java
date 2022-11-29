@@ -46,6 +46,7 @@ public class Vector {
         return ((a.getX() * b.getX()) + (a.getY() * b.getY()) + (a.getZ() * b.getZ()));
     }
     public static double angle(Vector a, Vector b){
+        //MyMaths is my own subclass of the java.lang.Math . arcCos does the same function as acos, but returns the angle in degrees
         double theta = MyMaths.arcCos(((dotProduct(a,b)) / (mod(a) * mod(b))));
         return  theta;
     }
