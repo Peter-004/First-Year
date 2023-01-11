@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url(Flipbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.nav-bar{
+    background-color: #000000;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    opacity: 0.7;
+    width: 100%;
+    height: 75px;
+    position: fixed;
+    margin: -5px 0 0 -20px;
+    padding: 0 auto;
+}
+.nav-bar:first-child{
+    position: relative;
+    left: 10px;
+   /* margin-left: 10px;*/
+}
+img{
+    float: left;
+    width: 4rem;
+    border-radius: 50%;
+    margin: 5px 10px;
+    position: relative;
+}
+.nav-bar .menu{
+    margin: auto;
+    display: inline-block;
+    position: absolute;
+    color: #ffffff;
+    font-size: 1.5em;
+    right: 30px;
+    vertical-align: middle;
+    text-align: center;
+    /*margin-right: 10px;*/
+}
+.flip-box{
+    width: 300px;
+    height: auto;
+    margin: 0 auto;
+    padding: 5px;
+    background: transparent;
+    position: relative;
+    display: grid;
+    grid: auto/ auto auto auto ;
+    grid-gap: 0px;
+}
+.flip-box div{
+    background: var(--clr);
+    width: 50px;
+    height: 100px;
+    margin: 2px;
+    display: block;
+    transition: all 0.7s;
+}
+.c.dull{
+    transform: rotateY(180deg);
+    background-color: #ffffff;
+    transition: all 0.7s;
+}
+.done{
+    background-color: var(--clr);
+}
+.active{
+    transform: rotateY(180deg);
+    background-color: var(--clr);
+    transition: all 0.7s;
+}
+
+
+/*.flip-box div:active{
+    transform: rotateY(180deg);
+}*/
